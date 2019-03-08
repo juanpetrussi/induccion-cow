@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/induccion.iml" filepath="$PROJECT_DIR$/.idea/modules/induccion.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/induccion_main.iml" filepath="$PROJECT_DIR$/.idea/modules/induccion_main.iml" group="induccion" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/induccion_test.iml" filepath="$PROJECT_DIR$/.idea/modules/induccion_test.iml" group="induccion" />
+    </modules>
+  </component>
+</project>
