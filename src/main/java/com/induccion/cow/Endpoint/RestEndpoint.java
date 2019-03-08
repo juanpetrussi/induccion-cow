@@ -57,8 +57,6 @@ public class RestEndpoint implements SparkApplication {
     }
 
     private static Object recibirPagoPunto3(Request request, Response response) throws MPException {
-        MercadoPago.SDK.setClientId(EndpointUtils.ENV_CLIENT_ID);
-        MercadoPago.SDK.setClientSecret(EndpointUtils.ENV_CLIENT_SECRET);
         MercadoPago.SDK.setAccessToken(EndpointUtils.ACCESS_TOKEN);
 
         com.mercadopago.resources.datastructures.payment.Payer payer = new com.mercadopago.resources.datastructures.payment.Payer();
@@ -83,8 +81,6 @@ public class RestEndpoint implements SparkApplication {
     }
 
     private static Object tokenizerPunto4(Request request, Response response) throws MPException {
-        MercadoPago.SDK.setClientId(EndpointUtils.ENV_CLIENT_ID);
-        MercadoPago.SDK.setClientSecret(EndpointUtils.ENV_CLIENT_SECRET);
         MercadoPago.SDK.setAccessToken(EndpointUtils.ACCESS_TOKEN);
 
         com.mercadopago.resources.datastructures.payment.Payer payer = new com.mercadopago.resources.datastructures.payment.Payer()

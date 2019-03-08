@@ -15,17 +15,4 @@ public class EndpointUtils {
     public static final String PATH_PUNTO_3 = "/induccion/punto3";
     public static final String PATH_PUNTO_4 = "/induccion/punto4";
     public static final String PATH_PUNTO_5 = "/induccion/punto5";
-
-    public static Payment createPaymentFromRequest(Request request) {
-        Payment payment = new Payment();
-        payment.setTransactionAmount(456F)
-                .setDescription("Descripcion Tokenizer")
-                .setToken(request.queryParams("token"))
-                .setPaymentMethodId(request.queryParams("payment_method_id"))
-                .setInstallments(Integer.valueOf(request.queryParams("installments")))
-                .setIssuerId(request.queryParams("issuer_id"))
-                .setPayer(payer);
-
-        return payment;
-    }
 }
