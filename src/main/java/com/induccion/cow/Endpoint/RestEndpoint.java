@@ -101,6 +101,7 @@ public class RestEndpoint implements SparkApplication {
     }
 
     private static Object procesarPagoPunto5(Request request, Response response) throws MPException {
+        //return tokenizerPunto4(request, response);
         return "RESPONSE PUNTO 5";
     }
 }
