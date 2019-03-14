@@ -1,4 +1,4 @@
-import com.induccion.cow.Endpoint.RestEndpoint;
+import com.induccion.cow.endpoint.RestEndpoint;
 
 public class Main {
 
