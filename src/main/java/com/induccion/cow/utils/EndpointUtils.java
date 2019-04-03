@@ -17,6 +17,9 @@ public class EndpointUtils {
     public static final String PATH_PUNTO_4 = "/induccion/punto4";
     public static final String PATH_PUNTO_5 = "/induccion/punto5";
 
+    // VELOCITY
+    public static final String PATH_PUNTO_2 = "/step2";
+
     public static void setUserCredentials() throws MPException {
         MercadoPago.SDK.setClientId(EndpointUtils.ENV_CLIENT_ID);
         MercadoPago.SDK.setClientSecret(EndpointUtils.ENV_CLIENT_SECRET);

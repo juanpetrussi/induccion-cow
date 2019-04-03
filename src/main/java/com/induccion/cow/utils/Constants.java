@@ -3,6 +3,7 @@ package com.induccion.cow.utils;
 public class Constants {
 
     public static String TYPE_JSON = "application/json";
+    public static String CONTENT_TYPE = "Content-Type";
 
     public static String JSON_FORMAT_REQUEST_ERROR = "Formato de JSON request no válido";
 
@@ -21,8 +22,13 @@ public class Constants {
 
     public static String NAME_PARAM = "name";
     public static String SURNAME_PARAM = "surname";
-    public static String DATE_CREATED_PARAM = "dateCreated";
-    public static String IDENTIFICATION_TYPE_PARAM = "docType";
-    public static String IDENTIFICATION_NUMBER_PARAM = "docNumber";
+    public static String DATE_CREATED_PARAM = "date_created";
+    public static String IDENTIFICATION_TYPE_PARAM = "doc_type";
+    public static String IDENTIFICATION_NUMBER_PARAM = "doc_number";
 
+    public static String PREFERENCE_SUCCESS_MESSAGE = "Preference created successfully";
+    public static String PAYMENT_SUCCESS_MESSAGE = "Payment registered successfully";
+
+    // VELOCITY
+    public static String PATH_TO_TEMPLATE_STEP_2 = "/frontend/step2";
 }

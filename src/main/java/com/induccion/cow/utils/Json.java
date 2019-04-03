@@ -1,11 +1,13 @@
 package com.induccion.cow.utils;
 
 import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.PropertyNamingStrategy;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
+import com.induccion.cow.endpoint.ErrorResponse;
 import spark.Request;
 
 import java.net.URLDecoder;
@@ -44,5 +46,17 @@ public enum Json {
             mapResult.put(keyValueSplit[0], keyValueSplit[1]);
         }
         return mapResult;
+    }
+
+    public String toJsonString(ErrorResponse errorResponse) {
+        try {
+            return mapper.writeValueAsString(errorResponse);
+        } catch (JsonProcessingException e) {
+            // Handle parsing manually.
+            return "{ " +
+                    "\"error\":\" " + errorResponse.getError() + " \", " +
+                    "\"message\":\" " + errorResponse.getMessage() + " \" " +
+                    "}";
+        }
     }
 }
