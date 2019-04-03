@@ -6,6 +6,7 @@ import com.mercadopago.resources.Preference;
 
 public class PreferenceService {
 
+    /* Implementacion de Singleton pero sin Enum *//*
     private static final PreferenceService INSTANCE = new PreferenceService();
     private PreferenceService() {
         if (INSTANCE != null) {
@@ -18,7 +19,7 @@ public class PreferenceService {
     @Override
     public Object clone() throws CloneNotSupportedException {
         throw new CloneNotSupportedException("Cannot clone PreferenceService class");
-    }
+    }*/
 
     public Preference createPreferencePunto1(PreferenceDto preferenceDto) throws MPException {
         Preference preference =

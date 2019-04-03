@@ -19,6 +19,8 @@ import spark.Response;
 
 public class PreferenceController {
 
+    private static PreferenceService preferenceService;
+
     public static SuccessResponse createPreferencePunto1(Request request, Response response) throws MPException, RequestValidateException {
         Errors errors = RequestValidators.validatePreferenceRequest(request);
         if(errors.hasErrors()){
@@ -27,7 +29,9 @@ public class PreferenceController {
 
         PreferenceDto preferenceDto = PreferenceConverter.convert(request);
 
-        Preference preferenceSaved = PreferenceService.getInstance().createPreferencePunto1(preferenceDto);
+        // Preference preferenceSaved = PreferenceService.getInstance().createPreferencePunto1(preferenceDto);
+        preferenceService = getPreferenceServiceInstance();
+        Preference preferenceSaved = preferenceService.createPreferencePunto1(preferenceDto);
         return new SuccessResponse(HttpStatus.SC_CREATED, Constants.PREFERENCE_SUCCESS_MESSAGE, preferenceSaved.getInitPoint());
     }
 
@@ -53,4 +57,10 @@ public class PreferenceController {
         return new SuccessResponse(HttpStatus.SC_CREATED, Constants.PREFERENCE_SUCCESS_MESSAGE, preferenceSaved.getInitPoint());
     }
 
+    private static PreferenceService getPreferenceServiceInstance() {
+        if(preferenceService == null) {
+            preferenceService = new PreferenceService();
+        }
+        return preferenceService;
+    }
 }

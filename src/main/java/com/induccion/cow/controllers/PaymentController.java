@@ -16,6 +16,8 @@ import spark.Response;
 
 public class PaymentController {
 
+    private static PaymentService paymentService;
+
     public static SuccessResponse recibirPagoPunto3(Request request, Response response) throws MPException, RequestValidateException {
         Errors errors = RequestValidators.validatePayWebCheckouRequest(request);
         if(errors.hasErrors()){
@@ -24,8 +26,17 @@ public class PaymentController {
 
         PaymentDto paymentDto = PaymentConverter.convert(request);
         
-        Payment paymentSeved = PaymentService.getInstance().createPayWebCheckout(paymentDto);
+        //Payment paymentSeved = PaymentService.getInstance().createPayWebCheckout(paymentDto);
+        paymentService = getPaymentServiceInstance();
+        Payment paymentSeved = paymentService.createPayWebCheckout(paymentDto);
         return new SuccessResponse(HttpStatus.SC_CREATED, Constants.PAYMENT_SUCCESS_MESSAGE, paymentSeved.getId());
+    }
+
+    private static PaymentService getPaymentServiceInstance() {
+        if(paymentService == null) {
+            paymentService = new PaymentService();
+        }
+        return paymentService;
     }
 
 }
